@@ -311,10 +311,13 @@ useEffect(() => {
             GATE
           </h3>
 
-          <div className="mt-2 text-[7px] font-bold text-red-500 sm:text-[10px] md:mt-4 md:text-base">
-            {gateOpen ? "GATE IS OPEN" : "GATE IS CLOSED"}
-          </div>
-
+          <div
+  className={`mt-2 text-[7px] font-bold sm:text-[10px] md:mt-4 md:text-base ${
+    gateOpen ? "text-green-500" : "text-red-500"
+  }`}
+>
+  {gateOpen ? "GATE IS OPEN" : "GATE IS CLOSED"}
+</div>
           <div className="mt-3 h-px w-12 bg-[#c8a15b]/50 sm:w-16 md:mt-6 md:w-24" />
 
           <p className="mt-3 text-[6px] tracking-[0.15em] text-white/40 sm:text-[8px] sm:tracking-[0.25em] md:mt-6 md:text-[10px] md:tracking-[0.3em]">
