@@ -108,7 +108,7 @@ export default function Home() {
 >
   <div className="mx-auto max-w-7xl">
     {/* عنوان */}
-    <div className="mb-10 text-right sm:mb-12 md:mb-16">
+    <div className="mb-12 text-right md:mb-16">
       <p className="text-xs tracking-[0.25em] text-[#c8a15b] sm:tracking-[0.4em]">
         دنیای خود را انتخاب کنید
       </p>
@@ -130,8 +130,8 @@ export default function Home() {
       <div
         className="
           relative mx-auto
-          h-[480px] w-full max-w-[430px]
-          sm:h-[560px] sm:max-w-[560px]
+          h-[500px] w-full max-w-[430px]
+          sm:h-[650px] sm:max-w-[650px]
           md:h-[1050px] md:max-w-[1200px]
         "
       >
@@ -140,17 +140,13 @@ export default function Home() {
           className={`
             absolute left-1/2 top-1/2
             h-[240px] w-[240px]
-            sm:h-[300px] sm:w-[300px]
+            sm:h-[350px] sm:w-[350px]
             md:h-[550px] md:w-[550px]
             -translate-x-1/2 -translate-y-1/2
             rounded-full bg-[#c8a15b]/5 blur-[60px]
             md:blur-[100px]
             transition-all duration-1000
-            ${
-              gateOpen
-                ? "scale-125 opacity-100"
-                : "scale-75 opacity-40"
-            }
+            ${gateOpen ? "scale-125 opacity-100" : "scale-75 opacity-40"}
           `}
         />
 
@@ -158,8 +154,8 @@ export default function Home() {
         <div
           className={`
             absolute left-1/2 top-1/2
-            h-[270px] w-[270px]
-            sm:h-[350px] sm:w-[350px]
+            h-[280px] w-[280px]
+            sm:h-[400px] sm:w-[400px]
             md:h-[600px] md:w-[600px]
             -translate-x-1/2 -translate-y-1/2
             rounded-full border border-[#c8a15b]/10
@@ -172,8 +168,8 @@ export default function Home() {
         <div
           className={`
             absolute left-1/2 top-1/2
-            h-[390px] w-[390px]
-            sm:h-[480px] sm:w-[480px]
+            h-[400px] w-[400px]
+            sm:h-[560px] sm:w-[560px]
             md:h-[850px] md:w-[850px]
             -translate-x-1/2 -translate-y-1/2
             rounded-full border border-white/5
@@ -188,9 +184,9 @@ export default function Home() {
           if (!image) return null;
 
           /*
-           * موقعیت دسکتاپ
+           * موقعیت اصلی دسکتاپ
            */
-          const desktopPositions = [
+          const positions = [
             { x: 0, y: -420 },
             { x: 270, y: -320 },
             { x: 410, y: -70 },
@@ -202,45 +198,7 @@ export default function Home() {
             { x: -270, y: -320 },
           ];
 
-          /*
-           * موقعیت موبایل
-           * همان دایره دسکتاپ با مقیاس کوچک‌تر
-           */
-          const mobilePositions = [
-            { x: 0, y: -170 },
-            { x: 110, y: -130 },
-            { x: 165, y: -28 },
-            { x: 140, y: 88 },
-            { x: 58, y: 160 },
-            { x: -58, y: 160 },
-            { x: -140, y: 88 },
-            { x: -165, y: -28 },
-            { x: -110, y: -130 },
-          ];
-
-          /*
-           * سایز متوسط برای تبلت / موبایل بزرگ
-           */
-          const tabletPositions = [
-            { x: 0, y: -205 },
-            { x: 132, y: -155 },
-            { x: 200, y: -34 },
-            { x: 172, y: 105 },
-            { x: 70, y: 190 },
-            { x: -70, y: 190 },
-            { x: -172, y: 105 },
-            { x: -200, y: -34 },
-            { x: -132, y: -155 },
-          ];
-
-          const desktopPosition =
-            desktopPositions[index] || { x: 0, y: 0 };
-
-          const mobilePosition =
-            mobilePositions[index] || { x: 0, y: 0 };
-
-          const tabletPosition =
-            tabletPositions[index] || { x: 0, y: 0 };
+          const position = positions[index] || { x: 0, y: 0 };
 
           return (
             <Link
@@ -248,90 +206,42 @@ export default function Home() {
               href={`/games/${game.slug}`}
               className="
                 absolute left-1/2 top-1/2 z-20
-                h-[76px] w-[76px]
-                sm:h-[105px] sm:w-[105px]
+                h-[78px] w-[78px]
+                sm:h-[120px] sm:w-[120px]
                 md:h-[180px] md:w-[180px]
               "
               style={{
+                transform: gateOpen
+                  ? `translate(calc(-50% + ${position.x * 0.42}px), calc(-50% + ${position.y * 0.42}px))`
+                  : "translate(-50%, -50%)",
+
                 opacity: gateOpen ? 1 : 0,
+
                 pointerEvents: gateOpen ? "auto" : "none",
+
                 transition:
-                  "opacity 500ms ease",
+                  "transform 800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease",
+
                 transitionDelay: gateOpen
                   ? `${index * 70}ms`
                   : "0ms",
               }}
             >
-              {/* 
-                این wrapper سه موقعیت مختلف را با Tailwind مدیریت می‌کند
-              */}
-              <div
-                className="absolute inset-0 transition-transform duration-[800ms]"
-                style={{
-                  transform: gateOpen
-                    ? `translate(-50%, -50%)`
-                    : "translate(-50%, -50%)",
-                }}
-              />
+              <div className="group relative h-full w-full overflow-hidden rounded-full border border-white/20 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all duration-500 hover:scale-110 hover:border-[#c8a15b] hover:shadow-[0_0_50px_rgba(200,161,91,0.35)]">
+                <img
+                  src={image}
+                  alt={game.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
 
-              {/* موقعیت موبایل */}
-              <div
-                className="absolute left-1/2 top-1/2 sm:hidden"
-                style={{
-                  transform: gateOpen
-                    ? `translate(calc(-50% + ${mobilePosition.x}px), calc(-50% + ${mobilePosition.y}px))`
-                    : "translate(-50%, -50%)",
-                  transition:
-                    "transform 800ms cubic-bezier(0.22, 1, 0.36, 1)",
-                }}
-              >
-                <div className="h-[76px] w-[76px]" />
-              </div>
+                <div className="absolute inset-0 bg-black/25 transition-all duration-500 group-hover:bg-black/5" />
 
-              {/* کارت واقعی بازی */}
-              <div
-                className="
-                  absolute left-1/2 top-1/2
-                  h-[76px] w-[76px]
-                  sm:h-[105px] sm:w-[105px]
-                  md:h-[180px] md:w-[180px]
-                  -translate-x-1/2 -translate-y-1/2
-                "
-                style={{
-                  transform: gateOpen
-                    ? undefined
-                    : "translate(-50%, -50%)",
-                }}
-              >
-                <div
-                  className="
-                    group relative h-full w-full overflow-hidden rounded-full
-                    border border-white/20 bg-black
-                    shadow-[0_0_30px_rgba(0,0,0,0.8)]
-                    transition-all duration-500
-                    hover:scale-110 hover:border-[#c8a15b]
-                    hover:shadow-[0_0_50px_rgba(200,161,91,0.35)]
-                  "
-                >
-                  <img
-                    src={image}
-                    alt={game.title}
-                    className="
-                      absolute inset-0 h-full w-full object-cover
-                      transition-transform duration-700
-                      group-hover:scale-110
-                    "
-                  />
+                <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/60 to-transparent" />
 
-                  <div className="absolute inset-0 bg-black/25 transition-all duration-500 group-hover:bg-black/5" />
-
-                  <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/60 to-transparent" />
-
-                  <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2 text-center sm:p-3 md:p-5">
-                    <span className="text-[6px] font-bold leading-tight tracking-wide text-white transition-colors duration-300 group-hover:text-[#c8a15b] sm:text-[8px] md:text-[11px]">
-                      {game.title}
-                    </span>
-                  </div>
+                <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2 text-center sm:p-3 md:p-5">
+                  <span className="text-[7px] font-bold leading-tight tracking-wide text-white transition-colors duration-300 group-hover:text-[#c8a15b] sm:text-[9px] md:text-[11px]">
+                    {game.title}
+                  </span>
                 </div>
               </div>
             </Link>
@@ -341,35 +251,31 @@ export default function Home() {
         {/* SOULS GATE */}
         <button
           type="button"
-          onClick={() => {
-            console.log("GATE CLICKED");
-            setGateOpen((current) => !current);
-          }}
+          onClick={() => setGateOpen((current) => !current)}
           className={`
             absolute left-1/2 top-1/2 z-30
             flex
             h-[165px] w-[165px]
-            sm:h-[220px] sm:w-[220px]
+            sm:h-[240px] sm:w-[240px]
             md:h-[380px] md:w-[380px]
             -translate-x-1/2 -translate-y-1/2
             flex-col items-center justify-center
             rounded-full border-2 border-[#c8a15b]
-            bg-[#090909] text-center cursor-pointer
-            transition-all duration-700
+            bg-[#090909] text-center
+            cursor-pointer transition-all duration-700
             hover:scale-105 active:scale-95
             ${
               gateOpen
                 ? "shadow-[0_0_100px_rgba(200,161,91,0.4)]"
                 : "shadow-[0_0_60px_rgba(200,161,91,0.15)]"
             }
-            md:shadow-[0_0_80px_rgba(200,161,91,0.15)]
           `}
         >
-          <p className="text-[7px] tracking-[0.25em] text-[#c8a15b] sm:text-[9px] sm:tracking-[0.4em] md:text-xs md:tracking-[0.5em]">
+          <p className="text-[7px] tracking-[0.25em] text-[#c8a15b] sm:text-[10px] sm:tracking-[0.4em] md:text-xs md:tracking-[0.5em]">
             ENTER THE
           </p>
 
-          <h3 className="mt-2 text-xl font-black text-white sm:mt-3 sm:text-3xl md:mt-4 md:text-5xl">
+          <h3 className="mt-2 text-xl font-black text-white sm:text-3xl md:mt-4 md:text-5xl">
             SOULS
           </h3>
 
@@ -377,13 +283,13 @@ export default function Home() {
             GATE
           </h3>
 
-          <div className="mt-2 text-[7px] font-bold text-red-500 sm:mt-3 sm:text-[9px] md:mt-4 md:text-base">
+          <div className="mt-2 text-[7px] font-bold text-red-500 sm:text-[10px] md:mt-4 md:text-base">
             {gateOpen ? "GATE IS OPEN" : "GATE IS CLOSED"}
           </div>
 
-          <div className="mt-3 h-px w-12 bg-[#c8a15b]/50 sm:mt-4 sm:w-16 md:mt-6 md:w-24" />
+          <div className="mt-3 h-px w-12 bg-[#c8a15b]/50 sm:w-16 md:mt-6 md:w-24" />
 
-          <p className="mt-3 text-[6px] tracking-[0.15em] text-white/40 sm:mt-4 sm:text-[8px] sm:tracking-[0.2em] md:mt-6 md:text-[10px] md:tracking-[0.3em]">
+          <p className="mt-3 text-[6px] tracking-[0.15em] text-white/40 sm:text-[8px] sm:tracking-[0.25em] md:mt-6 md:text-[10px] md:tracking-[0.3em]">
             {gateOpen ? "CHOOSE YOUR WORLD" : "ENTER THE GATE"}
           </p>
         </button>
@@ -391,8 +297,6 @@ export default function Home() {
     )}
   </div>
 </section>
-
-      {/* About */}
       <section
         id="about"
         className="relative overflow-hidden border-t border-white/5 px-6 py-32"
