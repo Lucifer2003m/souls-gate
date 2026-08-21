@@ -102,276 +102,272 @@ export default function Home() {
       </section>
 
       {/* Games */}
-      <section
-        id="games"
-        className="border-t border-white/5 bg-[#090909] px-6 py-28"
-      >
-        <div className="mx-auto max-w-7xl">
-          {/* عنوان */}
-          <div className="mb-16 text-right">
-            <p className="text-xs tracking-[0.4em] text-[#c8a15b]">
-              دنیای خود را انتخاب کنید
+<section
+  id="games"
+  className="border-t border-white/5 bg-[#090909] px-4 py-20 sm:px-6 md:py-28"
+>
+  <div className="mx-auto max-w-7xl">
+    {/* عنوان */}
+    <div className="mb-12 text-right md:mb-16">
+      <p className="text-xs tracking-[0.25em] text-[#c8a15b] sm:tracking-[0.4em]">
+        دنیای خود را انتخاب کنید
+      </p>
+
+      <h2 className="mt-4 text-3xl font-black sm:text-4xl md:text-6xl">
+        Souls Gate Games
+      </h2>
+
+      <p className="mt-5 max-w-xl text-sm leading-8 text-white/40">
+        جهان‌هایی که در آن شکست پایان نیست؛ بلکه بخشی از مسیر است.
+      </p>
+    </div>
+
+    {loadingGames ? (
+      <div className="py-20 text-center text-sm tracking-[0.3em] text-[#c8a15b]/60">
+        LOADING WORLDS...
+      </div>
+    ) : (
+      <>
+        {/* ================= MOBILE ================= */}
+        <div className="md:hidden">
+          {/* گیت موبایل */}
+          <button
+            type="button"
+            onClick={() => setGateOpen((current) => !current)}
+            className={`
+              relative z-30 mx-auto flex h-[220px] w-[220px]
+              flex-col items-center justify-center
+              rounded-full border-2 border-[#c8a15b]
+              bg-[#090909] text-center
+              transition-all duration-700 active:scale-95
+              ${
+                gateOpen
+                  ? "shadow-[0_0_100px_rgba(200,161,91,0.4)]"
+                  : "shadow-[0_0_60px_rgba(200,161,91,0.15)]"
+              }
+            `}
+          >
+            {/* نور */}
+            <div
+              className={`
+                absolute inset-[-35px] -z-10 rounded-full
+                bg-[#c8a15b]/10 blur-[50px]
+                transition-all duration-700
+                ${gateOpen ? "scale-110 opacity-100" : "scale-75 opacity-40"}
+              `}
+            />
+
+            <p className="text-[9px] tracking-[0.4em] text-[#c8a15b]">
+              ENTER THE
             </p>
 
-            <h2 className="mt-4 text-4xl font-black md:text-6xl">
-              Souls Gate Games
-            </h2>
+            <h3 className="mt-3 text-3xl font-black text-white">
+              SOULS
+            </h3>
 
-            <p className="mt-5 max-w-xl text-sm leading-8 text-white/40">
-              جهان‌هایی که در آن شکست پایان نیست؛ بلکه بخشی از مسیر است.
+            <h3 className="text-3xl font-black text-[#c8a15b]">
+              GATE
+            </h3>
+
+            <div className="mt-3 h-px w-16 bg-[#c8a15b]/50" />
+
+            <p className="mt-4 text-[8px] tracking-[0.2em] text-white/40">
+              {gateOpen ? "CHOOSE YOUR WORLD" : "TAP TO ENTER"}
             </p>
+          </button>
+
+          {/* بازی‌های موبایل */}
+          <div
+            className={`
+              grid grid-cols-2 gap-4 overflow-hidden
+              transition-all duration-700
+              ${
+                gateOpen
+                  ? "mt-12 max-h-[2000px] opacity-100"
+                  : "mt-0 max-h-0 opacity-0"
+              }
+            `}
+          >
+            {games.map((game, index) => {
+              const image = gameImages[game.slug] || game.image_url;
+              if (!image) return null;
+
+              return (
+                <Link
+                  key={game.id}
+                  href={`/games/${game.slug}`}
+                  className="group relative aspect-square overflow-hidden rounded-full border border-white/20 bg-black shadow-[0_0_30px_rgba(0,0,0,0.8)] transition-all duration-500 active:scale-95"
+                  style={{
+                    transitionDelay: gateOpen ? `${index * 70}ms` : "0ms",
+                    transform: gateOpen
+                      ? "translateY(0px) scale(1)"
+                      : "translateY(30px) scale(0.8)",
+                  }}
+                >
+                  {/* تصویر */}
+                  <img
+                    src={image}
+                    alt={game.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-active:scale-110"
+                  />
+
+                  {/* تاریکی */}
+                  <div className="absolute inset-0 bg-black/25" />
+
+                  {/* گرادیان */}
+                  <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/60 to-transparent" />
+
+                  {/* نام بازی */}
+                  <div className="absolute inset-x-0 bottom-0 flex justify-center p-4 text-center">
+                    <span className="text-[9px] font-bold leading-4 tracking-wide text-white">
+                      {game.title}
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
-
-          {loadingGames ? (
-            <div className="py-20 text-center text-sm tracking-[0.3em] text-[#c8a15b]/60">
-              LOADING WORLDS...
-            </div>
-          ) : (
-            <div className="relative mx-auto h-[1050px] w-full max-w-[1200px]">
-              {/* نور پشت Gate */}
-              <div
-                className={`absolute left-1/2 top-1/2 h-[550px] w-[550px]
-                -translate-x-1/2 -translate-y-1/2
-                rounded-full bg-[#c8a15b]/5 blur-[100px]
-                transition-all duration-1000
-                ${
-                  gateOpen
-                    ? "scale-125 opacity-100"
-                    : "scale-75 opacity-40"
-                }`}
-              />
-
-              {/* حلقه داخلی */}
-              <div
-                className={`absolute left-1/2 top-1/2 h-[600px] w-[600px]
-                -translate-x-1/2 -translate-y-1/2
-                rounded-full border border-[#c8a15b]/10
-                transition-all duration-1000
-                ${
-                  gateOpen ? "scale-110" : "scale-100"
-                }`}
-              />
-
-              {/* حلقه خارجی */}
-              <div
-                className={`absolute left-1/2 top-1/2 h-[850px] w-[850px]
-                -translate-x-1/2 -translate-y-1/2
-                rounded-full border border-white/5
-                transition-all duration-1000
-                ${
-                  gateOpen ? "scale-105" : "scale-100"
-                }`}
-              />
-
-              {/* بازی‌ها */}
-              {games.map((game, index) => {
-                const image =
-                gameImages[game.slug] || game.image_url;
-                if (!image) return null;
-
-                /*
-                 * موقعیت جدید بازی‌ها
-                 *
-                 * همه بازی‌ها روی محیط دایره قرار گرفته‌اند
-                 * و Elden Ring Nightreign دیگر نزدیک مرکز نیست.
-                 */
-                const positions = [
-                  { x: 0, y: -420 },       // Sekiro
-                  { x: 270, y: -320 },     // Dark Souls 1
-                  { x: 410, y: -70 },      // Dark Souls 2
-                  { x: 355, y: 220 },      // Dark Souls 3
-                  { x: 145, y: 395 },      // Elden Ring
-                  { x: -145, y: 395 },     // Bloodborne
-                  { x: -355, y: 220 },     // Demon's Souls
-                  { x: -410, y: -70 },     // Lies of P
-                  { x: -270, y: -320 },    // Elden Ring Nightreign
-                ];
-
-                const position = positions[index] || { x: 0, y: 0 };
-
-                return (
-                  <Link
-                    key={game.id}
-                    href={`/games/${game.slug}`}
-                    className="absolute left-1/2 top-1/2 z-20"
-                    style={{
-                      width: "180px",
-                      height: "180px",
-
-                      transform: gateOpen
-                        ? `translate(calc(-50% + ${position.x}px), calc(-50% + ${position.y}px))`
-                        : "translate(-50%, -50%)",
-
-                      opacity: gateOpen ? 1 : 0,
-
-                      pointerEvents: gateOpen ? "auto" : "none",
-
-                      transition:
-                        "transform 800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease",
-
-                      transitionDelay: gateOpen
-                        ? `${index * 70}ms`
-                        : "0ms",
-                    }}
-                  >
-                    {/* دایره بازی */}
-                    <div
-                      className="
-                        group
-                        relative
-                        h-full
-                        w-full
-                        overflow-hidden
-                        rounded-full
-                        border
-                        border-white/20
-                        bg-black
-                        shadow-[0_0_40px_rgba(0,0,0,0.8)]
-                        transition-all
-                        duration-500
-                        hover:scale-110
-                        hover:border-[#c8a15b]
-                        hover:shadow-[0_0_50px_rgba(200,161,91,0.35)]
-                      "
-                    >
-                      {/* تصویر */}
-                      <img
-                        src={image}
-                        alt={game.title}
-                        className="
-                          absolute
-                          inset-0
-                          h-full
-                          w-full
-                          object-cover
-                          transition-transform
-                          duration-700
-                          group-hover:scale-110
-                        "
-                      />
-
-                      {/* تاریکی */}
-                      <div
-                        className="
-                          absolute
-                          inset-0
-                          bg-black/25
-                          transition-all
-                          duration-500
-                          group-hover:bg-black/5
-                        "
-                      />
-
-                      {/* گرادیان */}
-                      <div
-                        className="
-                          absolute
-                          inset-x-0
-                          bottom-0
-                          h-2/3
-                          bg-gradient-to-t
-                          from-black
-                          via-black/60
-                          to-transparent
-                        "
-                      />
-
-                      {/* نام بازی */}
-                      <div
-                        className="
-                          absolute
-                          bottom-0
-                          left-0
-                          right-0
-                          flex
-                          justify-center
-                          p-5
-                          text-center
-                        "
-                      >
-                        <span
-                          className="
-                            text-[11px]
-                            font-bold
-                            tracking-wider
-                            text-white
-                            transition-colors
-                            duration-300
-                            group-hover:text-[#c8a15b]
-                          "
-                        >
-                          {game.title}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-
-              {/* SOULS GATE */}
-              <button
-                type="button"
-                onClick={() => {
-                  console.log("GATE CLICKED");
-                  setGateOpen((current) => !current);
-                }}
-                className={`
-                  absolute
-                  left-1/2
-                  top-1/2
-                  z-30
-                  flex
-                  h-[380px]
-                  w-[380px]
-                  -translate-x-1/2
-                  -translate-y-1/2
-                  flex-col
-                  items-center
-                  justify-center
-                  rounded-full
-                  border-2
-                  border-[#c8a15b]
-                  bg-[#090909]
-                  text-center
-                  cursor-pointer
-                  transition-all
-                  duration-700
-                  hover:scale-105
-                  ${
-                    gateOpen
-                      ? "shadow-[0_0_140px_rgba(200,161,91,0.4)]"
-                      : "shadow-[0_0_80px_rgba(200,161,91,0.15)]"
-                  }
-                `}
-              >
-                <p className="text-xs tracking-[0.5em] text-[#c8a15b]">
-                  ENTER THE
-                </p>
-
-                <h3 className="mt-4 text-5xl font-black text-white">
-                  SOULS
-                </h3>
-
-                <h3 className="text-5xl font-black text-[#c8a15b]">
-                  GATE
-                </h3>
-
-                <div className="mt-4 text-red-500 font-bold">
-                  {gateOpen ? "GATE IS OPEN" : "GATE IS CLOSED"}
-                </div>
-
-                <div className="mt-6 h-px w-24 bg-[#c8a15b]/50" />
-
-                <p className="mt-6 text-[10px] tracking-[0.3em] text-white/40">
-                  {gateOpen
-                    ? "CHOOSE YOUR WORLD"
-                    : "ENTER THE GATE"}
-                </p>
-              </button>
-            </div>
-          )}
         </div>
-      </section>
+
+        {/* ================= DESKTOP ================= */}
+        <div className="relative mx-auto hidden h-[1050px] w-full max-w-[1200px] md:block">
+          {/* نور پشت Gate */}
+          <div
+            className={`absolute left-1/2 top-1/2 h-[550px] w-[550px]
+            -translate-x-1/2 -translate-y-1/2
+            rounded-full bg-[#c8a15b]/5 blur-[100px]
+            transition-all duration-1000
+            ${
+              gateOpen
+                ? "scale-125 opacity-100"
+                : "scale-75 opacity-40"
+            }`}
+          />
+
+          {/* حلقه داخلی */}
+          <div
+            className={`absolute left-1/2 top-1/2 h-[600px] w-[600px]
+            -translate-x-1/2 -translate-y-1/2
+            rounded-full border border-[#c8a15b]/10
+            transition-all duration-1000
+            ${gateOpen ? "scale-110" : "scale-100"}`}
+          />
+
+          {/* حلقه خارجی */}
+          <div
+            className={`absolute left-1/2 top-1/2 h-[850px] w-[850px]
+            -translate-x-1/2 -translate-y-1/2
+            rounded-full border border-white/5
+            transition-all duration-1000
+            ${gateOpen ? "scale-105" : "scale-100"}`}
+          />
+
+          {/* بازی‌ها */}
+          {games.map((game, index) => {
+            const image = gameImages[game.slug] || game.image_url;
+            if (!image) return null;
+
+            const positions = [
+              { x: 0, y: -420 },
+              { x: 270, y: -320 },
+              { x: 410, y: -70 },
+              { x: 355, y: 220 },
+              { x: 145, y: 395 },
+              { x: -145, y: 395 },
+              { x: -355, y: 220 },
+              { x: -410, y: -70 },
+              { x: -270, y: -320 },
+            ];
+
+            const position = positions[index] || { x: 0, y: 0 };
+
+            return (
+              <Link
+                key={game.id}
+                href={`/games/${game.slug}`}
+                className="absolute left-1/2 top-1/2 z-20"
+                style={{
+                  width: "180px",
+                  height: "180px",
+                  transform: gateOpen
+                    ? `translate(calc(-50% + ${position.x}px), calc(-50% + ${position.y}px))`
+                    : "translate(-50%, -50%)",
+                  opacity: gateOpen ? 1 : 0,
+                  pointerEvents: gateOpen ? "auto" : "none",
+                  transition:
+                    "transform 800ms cubic-bezier(0.22, 1, 0.36, 1), opacity 500ms ease",
+                  transitionDelay: gateOpen
+                    ? `${index * 70}ms`
+                    : "0ms",
+                }}
+              >
+                <div className="group relative h-full w-full overflow-hidden rounded-full border border-white/20 bg-black shadow-[0_0_40px_rgba(0,0,0,0.8)] transition-all duration-500 hover:scale-110 hover:border-[#c8a15b] hover:shadow-[0_0_50px_rgba(200,161,91,0.35)]">
+                  <img
+                    src={image}
+                    alt={game.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+
+                  <div className="absolute inset-0 bg-black/25 transition-all duration-500 group-hover:bg-black/5" />
+
+                  <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black via-black/60 to-transparent" />
+
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-center p-5 text-center">
+                    <span className="text-[11px] font-bold tracking-wider text-white transition-colors duration-300 group-hover:text-[#c8a15b]">
+                      {game.title}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+
+          {/* SOULS GATE دسکتاپ */}
+          <button
+            type="button"
+            onClick={() => setGateOpen((current) => !current)}
+            className={`
+              absolute left-1/2 top-1/2 z-30
+              flex h-[380px] w-[380px]
+              -translate-x-1/2 -translate-y-1/2
+              flex-col items-center justify-center
+              rounded-full border-2 border-[#c8a15b]
+              bg-[#090909] text-center cursor-pointer
+              transition-all duration-700 hover:scale-105
+              ${
+                gateOpen
+                  ? "shadow-[0_0_140px_rgba(200,161,91,0.4)]"
+                  : "shadow-[0_0_80px_rgba(200,161,91,0.15)]"
+              }
+            `}
+          >
+            <p className="text-xs tracking-[0.5em] text-[#c8a15b]">
+              ENTER THE
+            </p>
+
+            <h3 className="mt-4 text-5xl font-black text-white">
+              SOULS
+            </h3>
+
+            <h3 className="text-5xl font-black text-[#c8a15b]">
+              GATE
+            </h3>
+
+            <div className="mt-4 text-red-500 font-bold">
+              {gateOpen ? "GATE IS OPEN" : "GATE IS CLOSED"}
+            </div>
+
+            <div className="mt-6 h-px w-24 bg-[#c8a15b]/50" />
+
+            <p className="mt-6 text-[10px] tracking-[0.3em] text-white/40">
+              {gateOpen ? "CHOOSE YOUR WORLD" : "ENTER THE GATE"}
+            </p>
+          </button>
+        </div>
+      </>
+    )}
+  </div>
+</section>
 
       {/* About */}
       <section
