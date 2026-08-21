@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useEffect, useState } from "react";import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 
 type Game = {
@@ -27,6 +26,31 @@ const gameImages: Record<string, string> = {
 
 export default function Home() {
   const [gateOpen, setGateOpen] = useState(false);
+  const [gameScale, setGameScale] = useState(1);
+
+useEffect(() => {
+  function updateGameScale() {
+    const width = window.innerWidth;
+
+    if (width < 480) {
+      setGameScale(0.42);
+    } else if (width < 640) {
+      setGameScale(0.55);
+    } else if (width < 768) {
+      setGameScale(0.68);
+    } else {
+      setGameScale(1);
+    }
+  }
+
+  updateGameScale();
+
+  window.addEventListener("resize", updateGameScale);
+
+  return () => {
+    window.removeEventListener("resize", updateGameScale);
+  };
+}, []);
 
   const [games, setGames] = useState<Game[]>([]);
   const [loadingGames, setLoadingGames] = useState(true);
@@ -128,12 +152,13 @@ export default function Home() {
       </div>
     ) : (
       <div
-        className="
-          relative mx-auto
-          h-[500px] w-full max-w-[430px]
-          sm:h-[650px] sm:max-w-[650px]
-          md:h-[1050px] md:max-w-[1200px]
-        "
+  className="
+    relative mx-auto
+    h-[500px] w-full max-w-[430px]
+    sm:h-[650px] sm:max-w-[650px]
+    md:h-[1050px] md:max-w-[1200px]
+  "
+>
       >
         {/* نور پشت Gate */}
         <div
@@ -205,15 +230,18 @@ export default function Home() {
               key={game.id}
               href={`/games/${game.slug}`}
               className="
-                absolute left-1/2 top-1/2 z-20
-                h-[78px] w-[78px]
-                sm:h-[120px] sm:w-[120px]
-                md:h-[180px] md:w-[180px]
-              "
+  absolute left-1/2 top-1/2 z-20
+  h-[78px] w-[78px]
+  sm:h-[120px] sm:w-[120px]
+  md:h-[180px] md:w-[180px]
+"
               style={{
                 transform: gateOpen
-                  ? `translate(calc(-50% + ${position.x * 0.42}px), calc(-50% + ${position.y * 0.42}px))`
-                  : "translate(-50%, -50%)",
+  ? `translate(
+      calc(-50% + ${position.x * gameScale}px),
+      calc(-50% + ${position.y * gameScale}px)
+    )`
+  : "translate(-50%, -50%)",
 
                 opacity: gateOpen ? 1 : 0,
 
