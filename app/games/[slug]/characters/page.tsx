@@ -24,7 +24,7 @@ const gameImages: Record<string, string> = {
   "elden-ring": "/images/eldenring.png",
   bloodborne: "/images/bloodborne.png",
   "demons-souls": "/images/demonsouls.png",
-  "lies-of-p": "/images/liesofp.jpg",
+  "lies-of-p": "/images/liesofp.png",
   "elden-ring-nightreign": "/images/eldenringnightreign.png",
 };
 

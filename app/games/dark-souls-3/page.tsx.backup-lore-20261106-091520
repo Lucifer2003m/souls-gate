@@ -1,0 +1,612 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import NPCsArchive from "./NPCs/NPCsArchive";
+import ItemsArchive from "./items/ItemsArchive";
+import ArmorLab from "./armor-lab/ArmorLab";
+import ArmorArchive from "./armor-lab/ArmorArchive";
+import CrowTrade from "./CrowTrade/CrowTrade";
+import RingsArchive from "./rings/RingsArchive";
+import ShieldsArchive from "./Shields/ShieldsArchive";
+import CovenantsArchive from "./CovenantsArchive";
+import BuildsPage from "./Builds/BuildsPage";
+import BossesPage from "./Bosses/page";
+import LocationsArchive from "./locations/LocationsArchive";
+import SpellsPage from "./spells/SpellsPage";
+import WeaponsArchive from "./weapons/WeaponsArchive";
+import WalkthroughArchive from "./WalkthroughArchive";
+import GesturesArchive from "./GesturesArchive";
+import UpgradeInfusionArchive from "./UpgradeInfusionArchive";
+import EndingsArchive from "./EndingsArchive";
+
+const sections = [
+  {
+    id: "rings",
+    title: "RINGS",
+    fa: "رینگ‌ها",
+    icon: "♢",
+    number: "01",
+    description: "حلقه‌ها و قدرت‌های پنهان لاثریک",
+  },
+  {
+    id: "weapons",
+    title: "WEAPONS",
+    fa: "سلاح‌ها",
+    icon: "⚔",
+    number: "02",
+    description: "شمشیرها، تبرها و سلاح‌های افسانه‌ای",
+  },
+  {
+    id: "shields",
+    title: "SHIELDS",
+    fa: "سپرها",
+    icon: "⬡",
+    number: "03",
+    description: "سپرهای دفاعی برای نبردهای مرگبار",
+  },
+  {
+    id: "armor",
+    title: "ARMOR",
+    fa: "زره‌ها",
+    icon: "♜",
+    number: "04",
+    description: "مجموعه زره‌ها و ابزار بررسی آن‌ها",
+  },
+  {
+    id: "spells",
+    title: "SPELLS",
+    fa: "جادوها",
+    icon: "✧",
+    number: "05",
+    description: "جادوها، معجزه‌ها و آتش جهنمی",
+  },
+  {
+    id: "bosses",
+    title: "BOSSES",
+    fa: "باس‌ها",
+    icon: "♛",
+    number: "06",
+    description: "رویارویی با قدرتمندترین دشمنان بازی",
+  },
+  {
+    id: "covenants",
+    title: "COVENANTS",
+    fa: "کاوننت‌ها",
+    icon: "⚜",
+    number: "07",
+    description: "پیمان‌های تاریک و وفاداری‌های لاثریک",
+  },
+  {
+    id: "items",
+    title: "ITEMS",
+    fa: "آیتم‌ها",
+    icon: "✦",
+    number: "08",
+    description: "آرشیو آیتم‌ها، اشیای ویژه و روح باس‌ها",
+  },
+  {
+    id: "trade",
+    title: "CROW'S TRADE",
+    fa: "تجارت کلاغ‌ها",
+    icon: "🐦‍⬛",
+    number: "09",
+    description: "تبادل آیتم‌ها با کلاغ مرموز",
+  },
+  {
+    id: "builds",
+    title: "BUILDS",
+    fa: "بیلدها و ساخت شخصیت",
+    icon: "⚒",
+    number: "10",
+    description: "ساخت شخصیت و برنامه‌ریزی سبک مبارزه",
+  },
+  {
+    id: "npcs",
+    title: "NPC ARCHIVE",
+    fa: "شخصیت‌ها و مأموریت‌ها",
+    icon: "♟",
+    number: "11",
+    description: "شخصیت‌های بازی و پیگیری مأموریت‌های جانبی",
+  },
+  {
+    id: "locations",
+    title: "LOCATIONS",
+    fa: "مناطق و مکان‌ها",
+    icon: "⌖",
+    number: "12",
+    description: "مناطق بازی، مسیرها، بون‌فایرها و مکان‌های مهم",
+  },
+  {
+    id: "walkthrough",
+    title: "WALKTHROUGH",
+    fa: "راهنمای کامل پیشروی",
+    icon: "✥",
+    number: "13",
+    description: "مسیر کامل مناطق، باس‌ها و مراحل بازی",
+  },
+  {
+    id: "gestures",
+    title: "GESTURES",
+    fa: "ژست‌ها و حرکات",
+    icon: "☼",
+    number: "14",
+    description: "تمام ۳۳ ژست و روش آزادسازی آن‌ها",
+  },
+  {
+    id: "upgrade-infusion",
+    title: "UPGRADE & INFUSION",
+    fa: "ارتقا و اینفیوژن",
+    icon: "⚒",
+    number: "15",
+    description: "سنگ‌های اینفیوژن، مسیر ارتقا و محل متریال‌ها",
+  },
+  {
+    id: "endings",
+    title: "ENDINGS",
+    fa: "پایان‌های بازی",
+    icon: "☼",
+    number: "16",
+    description: "چهار سرنوشت آتش و راه رسیدن به هر پایان",
+  },
+];
+
+const ACTIVE_SECTION_KEY = "souls-gate-ds3-active-section";
+
+export default function DarkSoulsThreePage() {
+  const [active, setActive] = useState("rings");
+  const [activeLoaded, setActiveLoaded] = useState(false);
+  const [sectionSearch, setSectionSearch] = useState("");
+
+  useEffect(() => {
+    const audio = new Audio("/audio/ds3-intro.mp3");
+    audio.preload = "auto";
+    audio.volume = 0.35;
+    audio.loop = false;
+
+    let cancelled = false;
+    let started = false;
+    let ready = false;
+    let delayPassed = false;
+
+    const tryPlay = () => {
+      if (cancelled || started || !ready || !delayPassed) return;
+      started = true;
+      audio.currentTime = 0;
+      void audio.play().catch(() => {
+        started = false;
+      });
+    };
+
+    const onReady = () => {
+      ready = true;
+      tryPlay();
+    };
+
+    audio.addEventListener("canplay", onReady);
+    audio.load();
+
+    const timer = window.setTimeout(() => {
+      delayPassed = true;
+      tryPlay();
+    }, 1000);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+      audio.removeEventListener("canplay", onReady);
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
+
+  // بازیابی آخرین بخش انتخاب‌شده پس از بارگذاری یا رفرش
+  useEffect(() => {
+    try {
+      const savedSection = window.localStorage.getItem(ACTIVE_SECTION_KEY);
+      if (savedSection && sections.some((section) => section.id === savedSection)) {
+        setActive(savedSection);
+      }
+    } catch (error) {
+      console.error("Could not restore active section:", error);
+    } finally {
+      setActiveLoaded(true);
+    }
+  }, []);
+
+  // ذخیره بخش انتخاب‌شده
+  useEffect(() => {
+    if (!activeLoaded) return;
+    try {
+      window.localStorage.setItem(ACTIVE_SECTION_KEY, active);
+    } catch (error) {
+      console.error("Could not save active section:", error);
+    }
+  }, [active, activeLoaded]);
+
+  const current = sections.find((item) => item.id === active) ?? sections[0];
+
+  const filteredSections = useMemo(() => {
+    const query = sectionSearch.trim().toLowerCase();
+    if (!query) return sections;
+    return sections.filter((item) =>
+      `${item.title} ${item.fa} ${item.number}`.toLowerCase().includes(query)
+    );
+  }, [sectionSearch]);
+
+  const selectSection = (id: string) => {
+    setActive(id);
+    setSectionSearch("");
+    window.setTimeout(() => {
+      document.getElementById("archive")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 50);
+  };
+
+  const archiveDescription =
+    active === "gestures"
+      ? "آرشیو کامل ۳۳ ژست Dark Souls III به همراه روش آزادسازی و چک‌لیست جمع‌آوری."
+      : active === "rings"
+        ? "فهرست رینگ‌های Dark Souls III؛ تصاویر از Supabase دریافت می‌شوند."
+        : active === "spells"
+          ? "فهرست جادوها و طلسم‌های Dark Souls III؛ آرشیو اختصاصی جادوها."
+          : active === "weapons"
+            ? "آرشیو سلاح‌های Dark Souls III برای بررسی و انتخاب تجهیزات."
+            : active === "shields"
+              ? "آرشیو سپرهای بازی برای بررسی تجهیزات دفاعی."
+              : active === "armor"
+                ? "مجموعه زره‌ها و ابزار بررسی قطعات و ست‌ها."
+                : active === "bosses"
+                  ? "راهنمای باس‌های لاثریک و مسیر رویارویی با آن‌ها."
+                  : active === "covenants"
+                    ? "آرشیو پیمان‌ها و گروه‌های دنیای Dark Souls III."
+                    : active === "trade"
+                      ? "تجارت با کلاغ مرموز و مدیریت آیتم‌های مبادله."
+                      : active === "builds"
+                        ? "ساخت و بررسی بیلدهای شخصیت برای سبک‌های مختلف مبارزه."
+                        : active === "upgrade-infusion"
+                          ? "راهنمای سنگ‌های اینفیوژن، مقدار متریال لازم برای ارتقا و محل پیدا کردن Titanite Slabها."
+                          : active === "endings"
+                            ? "چهار سرنوشت آتش؛ راهنمای پیش‌نیازها، انتخاب‌ها و مراحل رسیدن به هر پایان."
+                            : "آرشیو اختصاصی " + current.fa + " در دنیای Dark Souls III.";
+
+  return (
+    <main
+      className="min-h-screen overflow-x-clip bg-[#080907] text-[#eee6d5]"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(5,7,8,.32),rgba(5,7,8,.72)),url('/images/ds3/bonfire-background.png')",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center center",
+        backgroundSize: "cover",
+      }}
+    >
+      {/* Navigation */}
+      <nav className="sticky top-0 z-40 border-b border-[#c8a15b]/25 bg-[#080a0b]/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-4 px-5 py-4 lg:px-10">
+          <a href="/" className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#c8a15b]/70 text-xl text-[#e0bd77]">
+              ✥
+            </span>
+            <span className="font-serif text-lg tracking-[0.13em] text-[#d8b66e] sm:text-xl">
+              SOULS GATE
+            </span>
+          </a>
+
+          <div className="flex flex-wrap items-center gap-5 text-[10px] tracking-[0.16em] text-white/65 sm:gap-8">
+            <a className="border-b border-[#d7ae5b] py-2 text-[#e2bd73]" href="/">
+              GAMES
+            </a>
+            <a className="py-2 transition hover:text-[#e2bd73]" href="/#explore">
+              EXPLORE
+            </a>
+            <a className="py-2 transition hover:text-[#e2bd73]" href="/#collection">
+              COLLECTION
+            </a>
+            <a className="py-2 transition hover:text-[#e2bd73]" href="/#about">
+              ABOUT
+            </a>
+          </div>
+
+          <div className="hidden items-center gap-3 xl:flex">
+            <span className="border border-[#c8a15b]/20 bg-black/40 px-4 py-2 text-xs text-white/45">
+              THE WORLD OF SOULS
+            </span>
+            <span className="border border-[#c8a15b]/30 px-3 py-2 text-xs text-[#d9bb7a]">
+              ◉ Nobody
+            </span>
+          </div>
+        </div>
+      </nav>
+
+      {/* Cinematic Hero */}
+      <header className="relative isolate flex min-h-[620px] h-[85svh] max-h-[1000px] items-center justify-center overflow-hidden border-b border-[#c8a15b]/45">
+        <div
+          className="absolute inset-0 -z-30 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/ds3/bonfire-background.png')" }}
+        />
+        <div className="absolute inset-0 -z-20 bg-black/[0.12]" />
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.18) 100%)",
+          }}
+        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080907] via-[#080907]/35 to-transparent" />
+        <div className="relative mx-auto w-full max-w-[1600px] px-5 pb-12 text-center sm:px-10 md:pb-80">
+          <h1 className="select-none font-serif text-5xl font-bold leading-none tracking-[-0.045em] text-[#f3e8d3] drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)] sm:text-7xl md:text-8xl lg:text-[9rem]">
+            DARK SOULS
+            <span className="mt-3 block text-[#d9b15e] drop-shadow-[0_4px_18px_rgba(0,0,0,0.95)]">
+              III
+            </span>
+          </h1>
+        </div>
+        <div className="absolute bottom-7 left-1/2 flex -translate-x-1/2 items-center gap-4 text-[#d4ae67]/65">
+          <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#c8a15b]/70 sm:w-16" />
+          <span className="text-xs">✥</span>
+          <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#c8a15b]/70 sm:w-16" />
+        </div>
+      </header>
+
+      {/* Quick Access */}
+      <section
+        id="quick-access"
+        className="scroll-mt-24 mx-auto max-w-[1600px] px-4 py-12 sm:px-6 md:py-16 lg:px-10"
+      >
+        <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-3 text-[10px] tracking-[0.25em] text-[#d8b66e]">
+              <span>✥</span>
+              YOUR JOURNEY BEGINS
+            </div>
+            <h2 className="mt-3 font-serif text-2xl text-[#f0e8dc] sm:text-3xl">
+              Explore the Archives
+            </h2>
+            <p dir="rtl" className="mt-2 text-sm text-white/65">
+              برای ورود به هر بخش، دروازه موردنظرت را انتخاب کن.
+            </p>
+          </div>
+          <span className="border border-[#c8a15b]/30 bg-black/45 px-3 py-2 text-[10px] tracking-[0.16em] text-[#d5b978]/80">
+            LOTHRIC DATABASE / 16
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {sections.map((item) => {
+            const isActive = active === item.id;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => selectSection(item.id)}
+                className={
+                  "group relative min-h-[145px] overflow-hidden border p-5 text-left backdrop-blur-sm transition duration-300 " +
+                  (isActive
+                    ? "border-[#c8a15b]/80 bg-[#15120b]/90 shadow-[inset_0_0_30px_rgba(200,161,91,0.08)]"
+                    : "border-white/15 bg-[#080a0a]/85 hover:border-[#c8a15b]/60 hover:bg-[#12100b]/95")
+                }
+              >
+                <span className="pointer-events-none absolute -right-3 -top-8 font-serif text-8xl text-[#c8a15b]/[0.06] transition duration-300 group-hover:text-[#c8a15b]/[0.13]">
+                  {item.icon}
+                </span>
+                <div className="relative flex items-start justify-between gap-3">
+                  <span
+                    className={
+                      "flex h-12 w-12 items-center justify-center border text-2xl transition " +
+                      (isActive
+                        ? "border-[#c8a15b]/60 bg-[#c8a15b]/10 text-[#e6c47e]"
+                        : "border-white/15 text-[#c8a15b]/85 group-hover:border-[#c8a15b]/50 group-hover:text-[#e6c47e]")
+                    }
+                  >
+                    {item.icon}
+                  </span>
+                  <span className="text-[10px] tracking-[0.16em] text-white/45">
+                    {item.number}
+                  </span>
+                </div>
+                <div className="relative mt-5 flex items-end justify-between gap-3">
+                  <div>
+                    <h3 className="font-serif text-base tracking-[0.12em] text-[#eee6d5] transition group-hover:text-[#e6c47e]">
+                      {item.title}
+                    </h3>
+                    <p dir="rtl" className="mt-1 text-xs text-[#d5b978]/90">
+                      {item.fa}
+                    </p>
+                    <p dir="rtl" className="mt-3 text-xs leading-6 text-white/65">
+                      {item.description}
+                    </p>
+                  </div>
+                  <span className="mb-1 shrink-0 text-lg text-[#c8a15b]/75 transition group-hover:translate-x-1 group-hover:text-[#e6c47e]">
+                    →
+                  </span>
+                </div>
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 h-[2px] w-full bg-gradient-to-r from-transparent via-[#c8a15b] to-transparent" />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Archive Layout */}
+      <section
+        id="archive"
+        dir="ltr"
+        className="scroll-mt-24 mx-auto grid max-w-[1600px] grid-cols-1 px-4 pb-14 sm:px-6 lg:grid-cols-[260px_minmax(0,1fr)] lg:px-10"
+      >
+        {/* Sidebar */}
+        <aside className="border border-[#c8a15b]/30 bg-[#070a0b]/95 p-4 md:p-5 lg:border-r-0">
+          <div className="flex items-center gap-3 border-b border-[#c8a15b]/25 pb-4 text-[10px] tracking-[0.22em] text-[#d8b66e]">
+            <span>✥</span>
+            DATABASE
+            <span className="h-px flex-1 bg-[#c8a15b]/30" />
+            <span>16</span>
+          </div>
+          <div className="mt-4 flex items-center border border-white/15 bg-black/60 focus-within:border-[#c8a15b]/60">
+            <span className="pl-3 text-[#c8a15b]">⌕</span>
+            <input
+              value={sectionSearch}
+              onChange={(event) => setSectionSearch(event.target.value)}
+              placeholder="Search sections..."
+              aria-label="Search archive sections"
+              className="min-w-0 flex-1 bg-transparent px-3 py-3 text-xs text-white outline-none placeholder:text-white/40"
+            />
+            {sectionSearch && (
+              <button
+                type="button"
+                aria-label="Clear section search"
+                onClick={() => setSectionSearch("")}
+                className="px-3 text-xs text-white/55 hover:text-[#e2bd73]"
+              >
+                ✕
+              </button>
+            )}
+          </div>
+          <div className="mt-4 space-y-1">
+            {filteredSections.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setActive(item.id)}
+                aria-current={active === item.id ? "page" : undefined}
+                className={
+                  "flex w-full items-center gap-3 border-l-2 px-3 py-3 text-left transition " +
+                  (active === item.id
+                    ? "border-[#d7ae5b] bg-[#c8a15b]/10 text-[#e2bd73]"
+                    : "border-transparent text-white/75 hover:bg-white/5 hover:text-[#e2bd73]")
+                }
+              >
+                <span className="w-6 text-center text-lg text-[#d6ad60]">
+                  {item.icon}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[10px] tracking-[0.10em]">
+                    {item.title}
+                  </span>
+                  <span dir="rtl" className="mt-1 block text-[10px] text-white/55">
+                    {item.fa}
+                  </span>
+                </span>
+                <span className="text-[10px] text-white/45">{item.number}</span>
+              </button>
+            ))}
+            {filteredSections.length === 0 && (
+              <p dir="rtl" className="px-3 py-5 text-center text-xs text-white/55">
+                بخشی با این عبارت پیدا نشد.
+              </p>
+            )}
+          </div>
+          <div className="mt-5 border-t border-[#c8a15b]/25 pt-4">
+            <p className="font-serif text-[10px] italic leading-6 tracking-wider text-[#b59b68]/85">
+              “FIRE FADES.
+              <br />
+              KNOWLEDGE REMAINS.”
+            </p>
+          </div>
+        </aside>
+
+        {/* Main Archive */}
+        <div className="min-w-0 border border-[#c8a15b]/30 bg-[#080b0b]/95 p-4 sm:p-6 md:p-8">
+          <div className="flex flex-wrap items-center justify-between gap-5 border-b border-[#c8a15b]/30 pb-6">
+            <div className="min-w-0">
+              <div className="flex items-center gap-3 text-[10px] tracking-[0.22em] text-[#d8b66e]">
+                <span>✥</span>
+                ARCHIVE / {current.number}
+              </div>
+              <div className="mt-3 flex items-center gap-4">
+                <span className="font-serif text-4xl text-[#e3bb6e]">{current.icon}</span>
+                <div className="min-w-0">
+                  <h2 className="break-words font-serif text-2xl text-[#f0e8dc] sm:text-3xl md:text-4xl">
+                    {current.title}
+                  </h2>
+                  <p dir="rtl" className="mt-1 text-sm text-[#d6b675]">
+                    {current.fa}
+                  </p>
+                </div>
+              </div>
+              <p dir="rtl" className="mt-4 max-w-2xl text-xs leading-7 text-white/70 md:text-sm">
+                {archiveDescription}
+              </p>
+            </div>
+            <div className="hidden max-w-[170px] text-center xl:block">
+              <div className="font-serif text-5xl text-[#c8a15b]/60">♢</div>
+              <p className="mt-1 font-serif text-xs italic leading-6 text-[#d5b978]/85">
+                “A ring can be a blessing,
+                <br />
+                or a curse.”
+              </p>
+              <div className="mx-auto mt-3 h-px w-14 bg-[#c8a15b]/50" />
+            </div>
+          </div>
+
+          <div className="min-w-0 pt-5">
+            {active === "rings" ? (
+              <RingsArchive />
+            ) : active === "weapons" ? (
+              <WeaponsArchive />
+            ) : active === "trade" ? (
+              <CrowTrade />
+            ) : active === "bosses" ? (
+              <BossesPage />
+            ) : active === "shields" ? (
+              <ShieldsArchive />
+            ) : active === "armor" ? (
+              <>
+                <ArmorLab />
+                <ArmorArchive />
+              </>
+            ) : active === "spells" ? (
+              <SpellsPage />
+            ) : active === "covenants" ? (
+              <CovenantsArchive />
+            ) : active === "builds" ? (
+              <BuildsPage />
+            ) : active === "npcs" ? (
+              <NPCsArchive />
+            ) : active === "locations" ? (
+              <LocationsArchive />
+            ) : active === "items" ? (
+              <ItemsArchive />
+            ) : active === "walkthrough" ? (
+              <WalkthroughArchive />
+            ) : active === "gestures" ? (
+              <GesturesArchive />
+            ) : active === "upgrade-infusion" ? (
+              <UpgradeInfusionArchive />
+            ) : active === "endings" ? (
+              <EndingsArchive />
+            ) : (
+              <div className="mt-6 border border-[#c8a15b]/25 bg-black/50 px-6 py-16 text-center">
+                <div className="font-serif text-5xl text-[#c8a15b]">{current.icon}</div>
+                <h3 className="mt-5 font-serif text-2xl">{current.title}</h3>
+                <p dir="rtl" className="mt-3 text-sm leading-8 text-white/65">
+                  این بخش هنوز آماده نشده است.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-[#c8a15b]/30 bg-black/90 px-6 py-8 text-center">
+        <p className="font-serif text-sm tracking-[0.25em] text-[#d8b66e]">
+          SOULS GATE
+        </p>
+        <p className="mt-2 text-[9px] tracking-[0.2em] text-white/45">
+          MAY THE FLAMES GUIDE THEE
+        </p>
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="mt-5 border border-white/15 px-4 py-2 text-[10px] tracking-[0.12em] text-white/65 transition hover:border-[#c8a15b]/60 hover:text-[#d8b66e]"
+        >
+          BACK TO TOP ↑
+        </button>
+      </footer>
+    </main>
+  );
+}

@@ -1,0 +1,1232 @@
+[
+  {
+    "file": "Alluring Skull.png",
+    "category": "tools-ammo",
+    "kind": "Consumable · Lure",
+    "description": "Throws a skull that attracts many nearby enemies, creating an opening to move past or separate them. Some enemies are unaffected."
+  },
+  {
+    "file": "Ashen Estus Flask (2).png",
+    "category": "consumables",
+    "kind": "Restoration",
+    "description": "Restores FP. Its available uses are shared with Estus allocation at a bonfire."
+  },
+  {
+    "file": "Ashen Estus Flask.png",
+    "category": "consumables",
+    "kind": "Restoration",
+    "description": "Restores FP. Its available uses are shared with Estus allocation at a bonfire."
+  },
+  {
+    "file": "Basin of Vows.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "A key item used at the High Wall of Lothric to access the Vordt/Dancer progression sequence."
+  },
+  {
+    "file": "Binoculars.png",
+    "category": "tools-ammo",
+    "kind": "Utility",
+    "description": "Allows the player to look at distant scenery and targets in first-person view."
+  },
+  {
+    "file": "Black Bug Pellet.png",
+    "category": "consumables",
+    "kind": "Resistance consumable",
+    "description": "Temporarily increases dark damage absorption."
+  },
+  {
+    "file": "Black Eye Orb.png",
+    "category": "covenant-online",
+    "kind": "Quest · Invasion",
+    "description": "Used in a specific quest to invade the world of the character who took the Fire Keeper’s soul."
+  },
+  {
+    "file": "Black Firebomb.png",
+    "category": "tools-ammo",
+    "kind": "Throwable",
+    "description": "Deals fire damage in an area on impact."
+  },
+  {
+    "file": "Black Separation Crystal.png",
+    "category": "tools-ammo",
+    "kind": "Online tool",
+    "description": "Returns a summoned phantom to their own world, or sends a visiting phantom away."
+  },
+  {
+    "file": "Blessed Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Blood Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Blood of the Dark Soul.png",
+    "category": "quest-special",
+    "kind": "DLC quest item",
+    "description": "A key item obtained at the end of The Ringed City DLC and associated with the painter quest."
+  },
+  {
+    "file": "Bloodred Moss Clump.png",
+    "category": "consumables",
+    "kind": "Status cure",
+    "description": "Reduces bleed buildup."
+  },
+  {
+    "file": "Blooming Purple Moss Clump.png",
+    "category": "consumables",
+    "kind": "Status cure",
+    "description": "Cures poison and toxic and reduces their buildup."
+  },
+  {
+    "file": "Blue Bug Pellet.png",
+    "category": "consumables",
+    "kind": "Resistance consumable",
+    "description": "Temporarily increases magic damage absorption."
+  },
+  {
+    "file": "Braille Divine Sunlight Tome.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Braille Divine Tome of Carim.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Braille Divine Tome of Lothric.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Budding Green Blossom (2).png",
+    "category": "consumables",
+    "kind": "Consumable · Stamina",
+    "description": "Provides a stronger temporary increase to stamina recovery speed."
+  },
+  {
+    "file": "Budding Green Blossom.png",
+    "category": "consumables",
+    "kind": "Consumable · Stamina",
+    "description": "Provides a stronger temporary increase to stamina recovery speed."
+  },
+  {
+    "file": "Captain_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Carthus Pyromancy Tome.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Carthus Rouge.png",
+    "category": "consumables",
+    "kind": "Weapon buff",
+    "description": "Temporarily adds bleed buildup to a compatible right-hand weapon."
+  },
+  {
+    "file": "Cell Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Champion_s Bones.png",
+    "category": "quest-special",
+    "kind": "Online · Undead Match",
+    "description": "Unlocks the Undead Match feature when burned at the Firelink Shrine bonfire."
+  },
+  {
+    "file": "Chaos Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Charcoal Pine Bundle.png",
+    "category": "consumables",
+    "kind": "Weapon buff",
+    "description": "Quickly applies a shorter-lasting fire weapon buff."
+  },
+  {
+    "file": "Charcoal Pine Resin.png",
+    "category": "consumables",
+    "kind": "Weapon buff",
+    "description": "Temporarily adds fire damage to a compatible right-hand weapon."
+  },
+  {
+    "file": "Church Guardian Shiv.png",
+    "category": "tools-ammo",
+    "kind": "Tool / projectile",
+    "description": "Used for ranged attacks, travel, observation, repairs, or other utility effects depending on the item."
+  },
+  {
+    "file": "Cinders of a Lord  Lothric.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Cinders of a Lord Abyss Watchers.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Cinders of a Lord Aldrich, Devourer of Gods.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Cinders of a Lord Yhorm the Giant.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Coiled Sword Fragment.png",
+    "category": "quest-special",
+    "kind": "Reusable travel item",
+    "description": "Returns the player to the last bonfire rested at, without consuming the item."
+  },
+  {
+    "file": "Coiled Sword.png",
+    "category": "quest-special",
+    "kind": "Key item · Bonfire",
+    "description": "Placed in Firelink Shrine to establish the central bonfire."
+  },
+  {
+    "file": "Contraption Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Cornyx_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Cracked Red Eye Orb.png",
+    "category": "covenant-online",
+    "kind": "Online · Invasion",
+    "description": "Consumed to attempt an invasion of another player’s world as a hostile phantom."
+  },
+  {
+    "file": "Crystal Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Crystal Scroll.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Dark Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Dark Sigil.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Darksign.png",
+    "category": "quest-special",
+    "kind": "Escape item",
+    "description": "Returns the player to the last bonfire at the cost of all carried souls."
+  },
+  {
+    "file": "Deep Braille Divine Tome.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Deep Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Divine Blessing.png",
+    "category": "tools-ammo",
+    "kind": "Rare restoration",
+    "description": "Fully restores HP and cures status ailments."
+  },
+  {
+    "file": "Divine Spear Fragment.png",
+    "category": "covenant-online",
+    "kind": "Covenant · Online",
+    "description": "A Spears of the Church item used to create a protective spear-fragment effect during the related encounter."
+  },
+  {
+    "file": "Dragon Chaser_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Dragon Head Stone.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Dragon Torso Stone.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Dreamchaser_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Dried Finger.png",
+    "category": "covenant-online",
+    "kind": "Online tool",
+    "description": "Increases the number of possible summoned guests and resets the invasion timer; it also raises invasion pressure."
+  },
+  {
+    "file": "Duel Charm.png",
+    "category": "covenant-online",
+    "kind": "Covenant / online item",
+    "description": "Used for online interactions, covenant rank progression, invasions, or multiplayer encounters depending on the item."
+  },
+  {
+    "file": "Dung Pie.png",
+    "category": "consumables",
+    "kind": "Consumable",
+    "description": "Use from the inventory or quick-item slots. The exact effect depends on the item; check its name and in-game description before using it."
+  },
+  {
+    "file": "Dungeon Ground Floor Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Easterner_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Ember.png",
+    "category": "quest-special",
+    "kind": "Consumable · Ember",
+    "description": "Kindles the player, increasing maximum HP and enabling online summoning while the effect lasts."
+  },
+  {
+    "file": "Estus Flask (2).png",
+    "category": "consumables",
+    "kind": "Restoration",
+    "description": "Restores HP. Flask uses and the HP/FP allocation can be adjusted at a bonfire."
+  },
+  {
+    "file": "Estus Flask.png",
+    "category": "consumables",
+    "kind": "Restoration",
+    "description": "Restores HP. Flask uses and the HP/FP allocation can be adjusted at a bonfire."
+  },
+  {
+    "file": "Estus Shard.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Excrement-covered Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Eyes of a Fire Keeper.png",
+    "category": "quest-special",
+    "kind": "Quest item · Ending",
+    "description": "A key quest item given to the Fire Keeper that unlocks additional ending-related dialogue and an ending path."
+  },
+  {
+    "file": "Fading Soul.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Farron Coal.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Fire Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Fire Keeper Soul.png",
+    "category": "quest-special",
+    "kind": "Quest item",
+    "description": "Can be given to the Fire Keeper to enable healing of the Dark Sigil, with consequences for the related quest state."
+  },
+  {
+    "file": "Firebomb.png",
+    "category": "tools-ammo",
+    "kind": "Throwable",
+    "description": "Deals fire damage in a small area on impact."
+  },
+  {
+    "file": "Forked Pale Tongue.png",
+    "category": "covenant-online",
+    "kind": "Covenant item",
+    "description": "A covenant-related reward associated with defeating certain invaders; used for covenant progression."
+  },
+  {
+    "file": "Giant_s Coal.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Gold Pine Bundle.png",
+    "category": "consumables",
+    "kind": "Weapon buff",
+    "description": "Quickly applies a shorter-lasting lightning weapon buff."
+  },
+  {
+    "file": "Gold Pine Resin.png",
+    "category": "consumables",
+    "kind": "Weapon buff",
+    "description": "Temporarily adds lightning damage to a compatible right-hand weapon."
+  },
+  {
+    "file": "Golden Scroll.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Grand Archives Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Grave Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Grave Warden Pyromancy Tome.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Grave Warden_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Great Swamp Pyromancy Tome.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Green Blossom.png",
+    "category": "consumables",
+    "kind": "Consumable · Stamina",
+    "description": "Temporarily increases stamina recovery speed."
+  },
+  {
+    "file": "Greirat_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Hawkwood_s Swordgrass.png",
+    "category": "covenant-online",
+    "kind": "Quest / covenant item",
+    "description": "A quest-related item associated with Hawkwood and the Watchdogs of Farron storyline."
+  },
+  {
+    "file": "Heavy Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Hello Carving.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Help me Carving.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Hidden Blessing.png",
+    "category": "consumables",
+    "kind": "Rare restoration",
+    "description": "Fully restores FP."
+  },
+  {
+    "file": "Hollow Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Hollow_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Homeward Bone.png",
+    "category": "tools-ammo",
+    "kind": "Travel item",
+    "description": "Returns the player to the last bonfire rested at, while souls and progress since the last bonfire are handled according to the game rules."
+  },
+  {
+    "file": "Human Pine Resin.png",
+    "category": "consumables",
+    "kind": "Weapon buff",
+    "description": "Temporarily adds dark damage to a compatible right-hand weapon."
+  },
+  {
+    "file": "Irina_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Izalith Pyromancy Tome.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "I_m sorry Carving.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Jailbreaker_s Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Jailer_s Key Ring.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Karla_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Kukri.png",
+    "category": "tools-ammo",
+    "kind": "Throwable · Bleed",
+    "description": "A throwing blade that deals damage and builds bleed."
+  },
+  {
+    "file": "Large Soul of a Crestfallen Knight.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Large Soul of a Deserted Corpse.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Large Soul of a Nameless Soldier.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Large Soul of a Proud Paladin.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Large Soul of a Seasoned Warrior.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Large Soul of a Weary Warrior.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Large Soul of an Intrepid Hero.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Large Soul of an Unknown Traveler.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Large Titanite Shard.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Lift Chamber Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Lightning Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Lightning Urn.png",
+    "category": "tools-ammo",
+    "kind": "Tool / projectile",
+    "description": "Used for ranged attacks, travel, observation, repairs, or other utility effects depending on the item."
+  },
+  {
+    "file": "Logan_s Scroll.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Londor Braille Divine Tome.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Loretta_s Bone.png",
+    "category": "quest-special",
+    "kind": "Quest item",
+    "description": "Give it to Greirat in Firelink Shrine as part of his personal quest."
+  },
+  {
+    "file": "Mortician_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Mossfruit.png",
+    "category": "consumables",
+    "kind": "Consumable · Resistance",
+    "description": "Temporarily increases resistance to several status effects."
+  },
+  {
+    "file": "Old Cell Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Old Woman_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Orbeck_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Paladin_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Pale Pine Resin.png",
+    "category": "consumables",
+    "kind": "Weapon buff",
+    "description": "Temporarily adds magic damage to a compatible right-hand weapon."
+  },
+  {
+    "file": "Patches_ Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Pendant.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Poison Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Poison Throwing Knife.png",
+    "category": "tools-ammo",
+    "kind": "Throwable · Poison",
+    "description": "A throwing knife that builds poison on the target."
+  },
+  {
+    "file": "Prism Stone.png",
+    "category": "tools-ammo",
+    "kind": "Utility",
+    "description": "A small glowing stone used to mark a spot; falling damage can be tested by dropping it, but it is not a guarantee of safety."
+  },
+  {
+    "file": "Prisoner Chief_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Profaned Coal.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Proof of a Concord Well Kept.png",
+    "category": "covenant-online",
+    "kind": "Covenant item",
+    "description": "A rare covenant reward associated with the Blades of the Darkmoon; used to increase covenant rank."
+  },
+  {
+    "file": "Purging Stone.png",
+    "category": "consumables",
+    "kind": "Status cure",
+    "description": "Reduces Hollowing; it does not remove the Dark Sigil."
+  },
+  {
+    "file": "Purple Moss Clump.png",
+    "category": "consumables",
+    "kind": "Status cure",
+    "description": "Cures poison and reduces poison buildup."
+  },
+  {
+    "file": "Quelana Pyromancy Tome.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Raw Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Red Bug Pellet.png",
+    "category": "consumables",
+    "kind": "Resistance consumable",
+    "description": "Temporarily increases fire damage absorption."
+  },
+  {
+    "file": "Red Eye Orb.png",
+    "category": "covenant-online",
+    "kind": "Online · Invasion",
+    "description": "Allows repeated attempts to invade another player’s world as a hostile phantom."
+  },
+  {
+    "file": "Red Sign Soapstone.png",
+    "category": "covenant-online",
+    "kind": "Online · PvP",
+    "description": "Places a red summon sign for competitive player-versus-player encounters."
+  },
+  {
+    "file": "Refined Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Repair Powder.png",
+    "category": "tools-ammo",
+    "kind": "Utility",
+    "description": "Repairs equipped weapons and armor by restoring durability."
+  },
+  {
+    "file": "Rime-blue Moss Clump.png",
+    "category": "consumables",
+    "kind": "Status cure",
+    "description": "Cures frost and reduces frost buildup."
+  },
+  {
+    "file": "Ritual Spear Fragment.png",
+    "category": "covenant-online",
+    "kind": "Covenant · Online",
+    "description": "A Spears of the Church item used to create a damaging spear-fragment effect during the related encounter."
+  },
+  {
+    "file": "Rope Black Firebomb.png",
+    "category": "tools-ammo",
+    "kind": "Throwable · Backward use",
+    "description": "Throws a stronger black firebomb behind the player while retreating."
+  },
+  {
+    "file": "Rope Firebomb.png",
+    "category": "tools-ammo",
+    "kind": "Throwable · Backward use",
+    "description": "Throws a firebomb behind the player, useful while retreating."
+  },
+  {
+    "file": "Roster of Knights.png",
+    "category": "covenant-online",
+    "kind": "Covenant / online item",
+    "description": "Used for online interactions, covenant rank progression, invasions, or multiplayer encounters depending on the item."
+  },
+  {
+    "file": "Rotten Pine Resin.png",
+    "category": "consumables",
+    "kind": "Weapon buff",
+    "description": "Temporarily adds poison buildup to a compatible right-hand weapon."
+  },
+  {
+    "file": "Rubbish.png",
+    "category": "tools-ammo",
+    "kind": "Junk item",
+    "description": "A nearly worthless item with no major gameplay function; it can be discarded or traded in limited contexts."
+  },
+  {
+    "file": "Rusted Coin.png",
+    "category": "consumables",
+    "kind": "Discovery consumable",
+    "description": "Temporarily increases item discovery."
+  },
+  {
+    "file": "Rusted Gold Coin.png",
+    "category": "consumables",
+    "kind": "Discovery consumable",
+    "description": "Temporarily provides a larger temporary item-discovery boost than a Rusted Coin."
+  },
+  {
+    "file": "Sage_s Coal.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Sage_s Scroll.png",
+    "category": "tomes-scrolls",
+    "kind": "Tome / scroll",
+    "description": "Give to the appropriate spell trainer to unlock additional spells for purchase. Divine tomes and pyromancy tomes have different recipients."
+  },
+  {
+    "file": "Seed of a Giant Tree.png",
+    "category": "covenant-online",
+    "kind": "Online tool",
+    "description": "Causes invaders to be attacked by enemies in the host’s world for a limited time."
+  },
+  {
+    "file": "Sharp Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Shriving Stone.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Siegbru.png",
+    "category": "quest-special",
+    "kind": "Consumable · Siegbräu",
+    "description": "Restores HP and provides temporary frost resistance."
+  },
+  {
+    "file": "Simple Gem.png",
+    "category": "gems",
+    "kind": "Infusion gem",
+    "description": "Used by Andre to infuse eligible weapons, changing scaling, damage type, or other weapon properties depending on the gem."
+  },
+  {
+    "file": "Small Doll.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Required to pass the magical barrier into Irithyll of the Boreal Valley."
+  },
+  {
+    "file": "Small Envoy Banner.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Small Lothric Banner.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Soul of a Champion.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of a Crestfallen Knight.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of a Crystal Sage.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of a Deserted Corpse.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of a Great Champion.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of a Nameless Soldier.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of a Proud Paladin.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of a Seasoned Warrior.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of a Stray Demon.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of a Venerable Old Hand.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of a Weary Warrior.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of Aldrich.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of an Intrepid Hero.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of an Old Hand.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of an Unknown Traveler.png",
+    "category": "souls",
+    "kind": "Soul item",
+    "description": "Consume to gain souls. The number of souls granted depends on the specific soul item."
+  },
+  {
+    "file": "Soul of Champion Gundyr.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of Darkeater Midir.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of Rosaria.png",
+    "category": "consumables",
+    "kind": "Consumable",
+    "description": "Use from the inventory or quick-item slots. The exact effect depends on the item; check its name and in-game description before using it."
+  },
+  {
+    "file": "Soul of Sister Friede.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of Slave Knight Gael.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of the Blood of the Wolf.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of the Deacons of the Deep.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of the Demon Prince.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of the Lords.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of the Nameless King.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of the Old Demon King.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of the Rotted Greatwood.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Soul of the Twin Princes.png",
+    "category": "boss-souls",
+    "kind": "Boss soul / Lord cinder",
+    "description": "Boss souls may be transposed through Ludleth after obtaining the Transposing Kiln; Lord cinders are key progression items rather than ordinary consumable souls."
+  },
+  {
+    "file": "Stalk Dung Pie.png",
+    "category": "consumables",
+    "kind": "Consumable",
+    "description": "Use from the inventory or quick-item slots. The exact effect depends on the item; check its name and in-game description before using it."
+  },
+  {
+    "file": "Sword of Avowal.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Thank you Carving.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Throwing Knife.png",
+    "category": "tools-ammo",
+    "kind": "Throwable",
+    "description": "A quick, low-damage projectile that can interrupt or finish weakened enemies."
+  },
+  {
+    "file": "Titanite Chunk.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Titanite Scale.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Titanite Shard.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Titanite Slab.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Tower Key.png",
+    "category": "keys",
+    "kind": "Key item",
+    "description": "Opens a specific lock, barrier, or progression route, or enables a particular interaction. Exact use depends on the named key item."
+  },
+  {
+    "file": "Transposing Kiln.png",
+    "category": "upgrade-materials",
+    "kind": "Key item · Boss rewards",
+    "description": "Give it to Ludleth of Courland to transpose eligible boss souls into special weapons, spells, or other rewards."
+  },
+  {
+    "file": "Twinkling Dragon Head Stone.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Twinkling Dragon Torso Stone.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Twinkling Titanite.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Undead Bone Shard.png",
+    "category": "upgrade-materials",
+    "kind": "Upgrade material",
+    "description": "Used by the game’s weapon, shield, or Estus upgrade systems. The exact material determines which upgrade path or upgrade step it supports."
+  },
+  {
+    "file": "Undead Hunter Charm.png",
+    "category": "consumables",
+    "kind": "Consumable",
+    "description": "Use from the inventory or quick-item slots. The exact effect depends on the item; check its name and in-game description before using it."
+  },
+  {
+    "file": "Very good Carving.png",
+    "category": "quest-special",
+    "kind": "Quest / special item",
+    "description": "A special item connected to progression, a character quest, an ending, or a unique interaction."
+  },
+  {
+    "file": "Way of White Circlet.png",
+    "category": "covenant-online",
+    "kind": "Online recovery",
+    "description": "Can restore online play after the game has restricted it due to repeated disconnects; it is not a general-purpose covenant item."
+  },
+  {
+    "file": "White Sign Soapstone.png",
+    "category": "covenant-online",
+    "kind": "Online · Co-op",
+    "description": "Places a summon sign so another player can summon the character as a friendly phantom."
+  },
+  {
+    "file": "Xanthous Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  },
+  {
+    "file": "Yellow Bug Pellet.png",
+    "category": "consumables",
+    "kind": "Resistance consumable",
+    "description": "Temporarily increases lightning damage absorption."
+  },
+  {
+    "file": "Young Grass Dew.png",
+    "category": "covenant-online",
+    "kind": "Covenant item",
+    "description": "A covenant reward associated with the Spears of the Church in The Ringed City."
+  },
+  {
+    "file": "Young White Branch (2).png",
+    "category": "consumables",
+    "kind": "Utility · Disguise",
+    "description": "Transforms the player into a nearby environmental object for a limited time; variants may be tied to specific locations."
+  },
+  {
+    "file": "Young White Branch.png",
+    "category": "consumables",
+    "kind": "Utility · Disguise",
+    "description": "Transforms the player into a nearby environmental object for a limited time; variants may be tied to specific locations."
+  },
+  {
+    "file": "Yuria_s Ashes.png",
+    "category": "ashes",
+    "kind": "Ashes · Shrine Handmaid",
+    "description": "Give these ashes to the Shrine Handmaid in Firelink Shrine to expand her shop inventory."
+  }
+]
